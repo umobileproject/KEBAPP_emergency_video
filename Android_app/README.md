@@ -4,3 +4,6 @@ This app is the Emergency video KEBAPP sample Android application developed with
 
 For more infomation about UMOBILE project, visit: [UMOBILE Project](http://www.umobile-project.eu/).
 
+Build and Install
+-----------------
+#./gradlew installRelease
