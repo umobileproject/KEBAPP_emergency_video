@@ -13,6 +13,7 @@ Run docker image
 #docker run -d --network=host kebapp
 
 
-##Prerequisites 
+Prerequisites 
+-------------
 Before this application can be used, the NFD (Networking Forwarding Daemon) has to be installed and running on the hotspot.
 
