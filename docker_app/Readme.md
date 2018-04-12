@@ -30,4 +30,6 @@ Run the kebapp docker image first, install PyNDN2 locally and run the client tes
 
 #python kebapp_consumer.py
 
+You should receive the video file named as video_received.mp4
+
 
