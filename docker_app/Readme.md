@@ -17,3 +17,17 @@ Prerequisites
 -------------
 Before this application can be used, the NFD (Networking Forwarding Daemon) has to be installed and running on the hotspot.
 
+How to test it locally
+----------------------
+
+Run the kebapp docker image first, install PyNDN2 locally and run the client test python script
+
+#nfd-start
+
+#docker run -d --network=host kebapp
+
+#cd PyNDN2 && python setup.py install && cd .. 
+
+#python kebapp_consumer.py
+
+

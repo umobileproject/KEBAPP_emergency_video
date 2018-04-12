@@ -68,6 +68,7 @@ ENV BUILD_PACKAGES="\
 #   * Reads the -p flags and /requirements.txt for Pip packages
 #   * Reads the -r flag to specify a different file path for /requirements.txt
 ADD PyNDN2 /PyNDN2
+ADD kebapp.py /kebapp.py
 ADD *.mp4 /
 RUN apk --update --no-cache add python py-pip openssl ca-certificates py-openssl wget
 #RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base \
@@ -77,6 +78,6 @@ RUN apk --update --no-cache add python py-pip openssl ca-certificates py-openssl
 #RUN apk package-cache clean
 RUN easy_install pip && CFLAGS=-Qunused-arguments pip install cryptography
 RUN cd /PyNDN2 && python setup.py install
-RUN cd /PyNDN2 && cp kebapp.py .. && cd .. && rm -rf PyNDN2
-
+#RUN cd /PyNDN2 && cp kebapp.py .. && cd .. && rm -rf PyNDN2
+RUN rm -rf PyNDN2
 ENTRYPOINT ["python", "-u", "kebapp.py"]
