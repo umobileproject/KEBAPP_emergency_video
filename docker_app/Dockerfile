@@ -78,6 +78,7 @@ RUN apk --update --no-cache add python py-pip openssl ca-certificates py-openssl
 #RUN apk package-cache clean
 RUN easy_install pip && CFLAGS=-Qunused-arguments pip install cryptography
 RUN cd /PyNDN2 && python setup.py install
+RUN rm -rf /.cache/
 #RUN cd /PyNDN2 && cp kebapp.py .. && cd .. && rm -rf PyNDN2
 RUN rm -rf PyNDN2
 ENTRYPOINT ["python", "-u", "kebapp.py"]
