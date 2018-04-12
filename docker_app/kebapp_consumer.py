@@ -21,6 +21,7 @@ import sys
 import time
 from pyndn import Name
 from pyndn import Face
+from pyndn import Interest
 
 def dump(*list):
     result = ""
@@ -60,7 +61,11 @@ def main():
     name = Name("/kebapp/video/video")
     #name.append(word)
     dump("Express name ", name.toUri())
-    face.expressInterest(name, counter.onData, counter.onTimeout)
+    interest = Interest(name)
+    #interest.setInterestLifeTimeMilliseconds(30000)
+    interest.setInterestLifetimeMilliseconds(30000)
+    face.expressInterest(interest,counter.onData,counter.onTimeout)
+	 #face.expressInterest(name, counter.onData, counter.onTimeout)
 
     while counter._callbackCount < 1:
         face.processEvents()
